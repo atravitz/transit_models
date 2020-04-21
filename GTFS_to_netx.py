@@ -95,3 +95,5 @@ for n in G.nodes:
     G.nodes[n]['pos'] = (stop_row['stop_lon'].values[0],
                          stop_row['stop_lat'].values[0])
     G.nodes[n]['node_color'] = colors_dict[n][0]
+
+nx.write_gml(G, 'cta.gml')
