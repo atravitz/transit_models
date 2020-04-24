@@ -79,5 +79,6 @@ def update(run_steps):
                 p.transit_time = p.transit_time + 1
 
 
-initialize()
-update(run_steps=100)
+if __name__ == '__main__':
+    initialize()
+    update(run_steps=100)
