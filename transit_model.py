@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 g = nx.read_gml('cta.gml')
 
 
-timesteps = 100
-n_simulations = 1
-n_passengers = 100
-node_capacity = 8
+timesteps = 500
+n_simulations = 3
+n_passengers = 500
+node_capacity = 10
 
 
 class Passenger:
@@ -20,7 +20,7 @@ class Passenger:
 
 
 def initialize(itinerary=None):
-    global g, nextg, passengers
+    global g, passengers
 
     g = nx.read_gml('cta.gml')
 
@@ -31,6 +31,7 @@ def initialize(itinerary=None):
 
     passengers = []
     for i in range(n_passengers):
+
         # assign a random direct-path itinerary
         p = Passenger()
         p.home = random.choice(list(g.nodes))
@@ -52,7 +53,7 @@ def initialize(itinerary=None):
 
 
 def update(run_steps):
-    global g, nextg, passengers
+    global g, passengers
 
     for t in range(run_steps):
         for i in range(len(passengers)):
@@ -79,6 +80,8 @@ def update(run_steps):
                 p.transit_time = p.transit_time + 1
 
 
+
 if __name__ == '__main__':
     initialize()
-    update(run_steps=100)
+    for n in range(n_simulations):
+        update(run_steps=timesteps)
