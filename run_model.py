@@ -19,7 +19,7 @@ class Passenger:
         self.transit_time = 0
 
 
-def initialize():
+def initialize(itinerary=None):
     global g, nextg, passengers
 
     g = nx.read_gml('cta.gml')
@@ -35,7 +35,11 @@ def initialize():
         p = Passenger()
         p.home = random.choice(list(g.nodes))
         p.work = random.choice(list(g.nodes))
-        p.itinerary = [p.home, p.work, p.home]
+
+        if itinerary is None:
+            p.itinerary = [p.home, p.work, p.home]
+        else: p.itinerary = itinerary
+
         p.itinerary_index = 0
         p.current = p.itinerary[p.itinerary_index]
         p.destination = p.itinerary[p.itinerary_index + 1]
@@ -47,34 +51,33 @@ def initialize():
         g.nodes[p.current]['population'] += 1
 
 
-def update():
+def update(run_steps):
     global g, nextg, passengers
 
-    for i in range(len(passengers)):
-        p = passengers[i]
-        # check to see if passenger has already completed their trip
-        if p.completed == False:
-            # update destination if needed
-            if p.current == p.destination:
-                p.itinerary_index += 1
-                if p.itinerary_index == len(p.itinerary)-1:
-                    print('complete, transit time is', p.transit_time)
-                    p.completed = True
-                    continue
-                else:
-                    p.destination = p.itinerary[(p.itinerary_index + 1)]
+    for t in range(run_steps):
+        for i in range(len(passengers)):
+            p = passengers[i]
+            # check to see if passenger has already completed their trip
+            if p.completed == False:
+                # update destination if needed
+                if p.current == p.destination:
+                    p.itinerary_index += 1
+                    if p.itinerary_index == len(p.itinerary)-1:
+                        print('complete, transit time is', p.transit_time)
+                        p.completed = True
+                        continue
+                    else:
+                        p.destination = p.itinerary[(p.itinerary_index + 1)]
 
-            if p.current != p.destination:
-                path = nx.shortest_path(g, p.current, p.destination)
-                next_node = path[1]
+                if p.current != p.destination:
+                    path = nx.shortest_path(g, p.current, p.destination)
+                    next_node = path[1]
 
-                if g.nodes[next_node]['population'] < g.nodes[next_node]['capacity']:
-                    p.current = next_node
+                    if g.nodes[next_node]['population'] < g.nodes[next_node]['capacity']:
+                        p.current = next_node
 
-            p.transit_time = p.transit_time + 1
+                p.transit_time = p.transit_time + 1
 
 
 initialize()
-
-for j in range(1, timesteps):
-    update()
+update(run_steps=100)
