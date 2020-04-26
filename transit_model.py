@@ -4,14 +4,6 @@ import numpy as np
 from matplotlib import cm
 import matplotlib.pyplot as plt
 
-g = nx.read_gml('cta.gml')
-
-
-timesteps = 500
-n_simulations = 3
-n_passengers = 500
-node_capacity = 10
-
 
 class Passenger:
     def __init__(self):
@@ -19,9 +11,7 @@ class Passenger:
         self.transit_time = 0
 
 
-def initialize(itinerary=None):
-    global g, passengers
-
+def initialize(n_passengers, node_capacity, itinerary=None):
     g = nx.read_gml('cta.gml')
 
     # number of passengers at a stop
@@ -51,9 +41,9 @@ def initialize(itinerary=None):
         # populate the node
         g.nodes[p.current]['population'] += 1
 
+        return(g, passengers)
 
-def update(run_steps):
-    global g, passengers
+def update(g, passengers, run_steps):
 
     for t in range(run_steps):
         for i in range(len(passengers)):
@@ -80,8 +70,8 @@ def update(run_steps):
                 p.transit_time = p.transit_time + 1
 
 
-
 if __name__ == '__main__':
     initialize()
     for n in range(n_simulations):
         update(run_steps=timesteps)
+
