@@ -21,7 +21,6 @@ def initialize(n_passengers, node_capacity, itinerary=None):
 
     passengers = []
     for i in range(n_passengers):
-
         # assign a random direct-path itinerary
         p = Passenger()
         p.home = random.choice(list(g.nodes))
@@ -40,12 +39,12 @@ def initialize(n_passengers, node_capacity, itinerary=None):
 
         # populate the node
         g.nodes[p.current]['population'] += 1
+    return(g, passengers)
 
-        return(g, passengers)
-
-def update(g, passengers, run_steps):
-
-    for t in range(run_steps):
+def update(g, passengers, max_run_steps):
+    transit_times = []
+    timestep = 0
+    while len(transit_times) < len(passengers) and timestep < max_run_steps:
         for i in range(len(passengers)):
             p = passengers[i]
             # check to see if passenger has already completed their trip
@@ -54,7 +53,8 @@ def update(g, passengers, run_steps):
                 if p.current == p.destination:
                     p.itinerary_index += 1
                     if p.itinerary_index == len(p.itinerary)-1:
-                        print('complete, transit time is', p.transit_time)
+                        # print('complete, transit time is', p.transit_time)
+                        transit_times.append(p.transit_time)
                         p.completed = True
                         continue
                     else:
@@ -66,8 +66,11 @@ def update(g, passengers, run_steps):
 
                     if g.nodes[next_node]['population'] < g.nodes[next_node]['capacity']:
                         p.current = next_node
-
                 p.transit_time = p.transit_time + 1
+        timestep += 1
+    return(transit_times)
+
+
 
 
 if __name__ == '__main__':
