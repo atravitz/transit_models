@@ -41,6 +41,7 @@ def initialize(n_passengers, node_capacity, itinerary=None):
         g.nodes[p.current]['population'] += 1
     return(g, passengers)
 
+
 def update(g, passengers, max_run_steps):
     transit_times = []
     timestep = 0
