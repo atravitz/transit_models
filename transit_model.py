@@ -42,21 +42,24 @@ def initialize(n_passengers, node_capacity, itinerary=None):
     return(g, passengers)
 
 
-def update(g, passengers, max_run_steps):
+def update(g, passengers, max_run_steps, graph_period=None):
     transit_times = []
     timestep = 0
+    graphs = []
     while len(transit_times) < len(passengers) and timestep < max_run_steps:
-        for i in range(len(passengers)):
+        for i in random.sample(list(range(len(passengers))), len(passengers)):
             p = passengers[i]
             # check to see if passenger has already completed their trip
             if p.completed == False:
                 # update destination if needed
                 if p.current == p.destination:
                     p.itinerary_index += 1
+                    # if passenger has completed trip,
+                    # remove from node and mark as complete
                     if p.itinerary_index == len(p.itinerary)-1:
-                        # print('complete, transit time is', p.transit_time)
                         transit_times.append(p.transit_time)
                         p.completed = True
+                        g.nodes[p.current]['population'] -= 1
                         continue
                     else:
                         p.destination = p.itinerary[(p.itinerary_index + 1)]
@@ -66,10 +69,17 @@ def update(g, passengers, max_run_steps):
                     next_node = path[1]
 
                     if g.nodes[next_node]['population'] < g.nodes[next_node]['capacity']:
+                        # population balance
+                        g.nodes[p.current]['population'] -= 1
                         p.current = next_node
+                        g.nodes[p.current]['population'] -= 1
+
                 p.transit_time = p.transit_time + 1
+        if graph_period and timestep%graph_period == 0:
+            graphs.append(g)
         timestep += 1
-    return(transit_times)
+
+    return(transit_times, graphs)
 
 
 
@@ -78,4 +88,5 @@ if __name__ == '__main__':
     initialize()
     for n in range(n_simulations):
         update(run_steps=timesteps)
+
 
