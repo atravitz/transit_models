@@ -72,11 +72,11 @@ def update(g, passengers, max_run_steps, graph_period=None):
                         # population balance
                         g.nodes[p.current]['population'] -= 1
                         p.current = next_node
-                        g.nodes[p.current]['population'] -= 1
+                        g.nodes[p.current]['population'] += 1
 
                 p.transit_time = p.transit_time + 1
         if graph_period and timestep%graph_period == 0:
-            graphs.append(g)
+            graphs.append(g.copy())
         timestep += 1
 
     return(transit_times, graphs)
