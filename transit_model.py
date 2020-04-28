@@ -54,8 +54,7 @@ def update(g, passengers, max_run_steps, graph_period=None):
                 # update destination if needed
                 if p.current == p.destination:
                     p.itinerary_index += 1
-                    # if passenger has completed trip,
-                    # remove from node and mark as complete
+                    # if passenger has completed trip, remove from node and mark as complete
                     if p.itinerary_index == len(p.itinerary)-1:
                         transit_times.append(p.transit_time)
                         p.completed = True
@@ -75,11 +74,15 @@ def update(g, passengers, max_run_steps, graph_period=None):
                         g.nodes[p.current]['population'] += 1
 
                 p.transit_time = p.transit_time + 1
+
         if graph_period and timestep%graph_period == 0:
             graphs.append(g.copy())
         timestep += 1
 
-    return(transit_times, graphs)
+    if graph_period:
+        return(transit_times, graphs)
+    else:
+        return(transit_times)
 
 
 
