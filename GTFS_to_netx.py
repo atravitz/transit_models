@@ -47,7 +47,6 @@ STOP_TIMES_subway['station_id'] = STOP_TIMES_subway['stop_id'].apply(get_parent)
 
 ## determine graph edges
 edges_list = []
-
 for trip_id, group in STOP_TIMES_subway.groupby('trip_id'):
         for i in group.index[:-1]:
             origin_stop = STOP_TIMES_subway['station_id'][i]

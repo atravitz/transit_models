@@ -18,19 +18,23 @@ def update_graph(i):
     ax.clear()
     G = graphs[i]
     colors = [G.nodes[i]['population'] for i in G.nodes]
+    nx.draw_networkx_nodes(G, node_coords,
+                           ax=ax,
+                           node_size=20,
+                           node_color=[G.nodes[i]['nodecolor'] for i in G.nodes])
     nx.draw(G, node_coords,
-            ax=ax, alpha=0.8,
+            ax=ax, alpha=0.9,
             node_size=10,
             node_color=colors,
-            cmap='PuBu')
+            cmap='Greys')
     plt.axis('equal')
-    # plt.grid(which='both')
-    # plt.show()
 
 
+def save_animation(graphs):
+    fig, ax = plt.subplots(dpi=150)
+    ani = FuncAnimation(fig, update_graph, frames=len(graphs), repeat_delay=100)
+    ani.save('animation.gif', writer='imagemagick', dpi=120, fps=10)
 
-fig, ax = plt.subplots(dpi=150)
-ani = FuncAnimation(fig, update_graph, frames=len(graphs), repeat_delay=100)
-ani.save('animation.gif', writer='imagemagick', fps=60)
+    plt.show()
 
-plt.show()
+if __name__ == '__main__'
