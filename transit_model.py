@@ -94,6 +94,20 @@ def update(g, passengers,
         return(transit_times)
 
 
+def add_line(path, g, name):
+    """add a new line to a networkx graph
+       note: all nodes must already exist"""
+
+    new_line = np.loadtxt(path, dtype=int)
+    for n in new_line:
+        node_colors = g.nodes[str(n)]['allnodecolors'] 
+        if name not in node_colors:
+            if type(node_colors) == list:
+                g.nodes[str(n)]['allnodecolors'] = g.nodes[str(n)]['allnodecolors'] + [name]
+            elif type(node_colors) == str:
+                g.nodes[str(n)]['allnodecolors'] = [g.nodes[str(n)]['allnodecolors'], name]
+
+
 if __name__ == '__main__':
     initialize()
     for n in range(n_simulations):
