@@ -1,0 +1,201 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 800;
+            height: 800;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+        #loadingBar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width: 800;
+            height: 800;
+            background-color:rgba(200,200,200,0.8);
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            opacity:1;
+        }
+
+        #bar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:20px;
+            height:20px;
+            margin:auto auto auto auto;
+            border-radius:11px;
+            border:2px solid rgba(30,30,30,0.05);
+            background: rgb(0, 173, 246); /* Old browsers */
+            box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+        }
+
+        #border {
+            position:absolute;
+            top:10px;
+            left:10px;
+            width:500px;
+            height:23px;
+            margin:auto auto auto auto;
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+            border-radius:10px;
+        }
+
+        #text {
+            position:absolute;
+            top:8px;
+            left:530px;
+            width:30px;
+            height:50px;
+            margin:auto auto auto auto;
+            font-size:22px;
+            color: #000000;
+        }
+
+        div.outerBorder {
+            position:relative;
+            top:400px;
+            width:600px;
+            height:44px;
+            margin:auto auto auto auto;
+            border:8px solid rgba(0,0,0,0.1);
+            background: rgb(252,252,252); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+            border-radius:72px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+<div id="loadingBar">
+    <div class="outerBorder">
+        <div id="text">0%</div>
+        <div id="border">
+            <div id="bar"></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": 40020, "label": 40020, "shape": "dot"}, {"id": 41350, "label": 41350, "shape": "dot"}, {"id": 40610, "label": 40610, "shape": "dot"}, {"id": 41260, "label": 41260, "shape": "dot"}, {"id": 40280, "label": 40280, "shape": "dot"}, {"id": 40700, "label": 40700, "shape": "dot"}, {"id": 40480, "label": 40480, "shape": "dot"}, {"id": 40030, "label": 40030, "shape": "dot"}, {"id": 41670, "label": 41670, "shape": "dot"}, {"id": 41070, "label": 41070, "shape": "dot"}, {"id": 41360, "label": 41360, "shape": "dot"}, {"id": 40170, "label": 40170, "shape": "dot"}, {"id": 41510, "label": 41510, "shape": "dot"}, {"id": 41160, "label": 41160, "shape": "dot"}, {"id": 40380, "label": 40380, "shape": "dot"}, {"id": 40260, "label": 40260, "shape": "dot"}, {"id": 41700, "label": 41700, "shape": "dot"}, {"id": 40680, "label": 40680, "shape": "dot"}, {"id": 41400, "label": 41400, "shape": "dot"}, {"id": 41690, "label": 41690, "shape": "dot"}, {"id": 41120, "label": 41120, "shape": "dot"}, {"id": 40300, "label": 40300, "shape": "dot"}, {"id": 41270, "label": 41270, "shape": "dot"}, {"id": 41080, "label": 41080, "shape": "dot"}, {"id": 40130, "label": 40130, "shape": "dot"}, {"id": 40510, "label": 40510, "shape": "dot"}, {"id": 41140, "label": 41140, "shape": "dot"}, {"id": 40720, "label": 40720, "shape": "dot"}, {"id": 41050, "label": 41050, "shape": "dot"}, {"id": 41250, "label": 41250, "shape": "dot"}, {"id": 40400, "label": 40400, "shape": "dot"}, {"id": 40520, "label": 40520, "shape": "dot"}, {"id": 40050, "label": 40050, "shape": "dot"}, {"id": 40690, "label": 40690, "shape": "dot"}, {"id": 40270, "label": 40270, "shape": "dot"}, {"id": 40840, "label": 40840, "shape": "dot"}, {"id": 40900, "label": 40900, "shape": "dot"}, {"id": 41680, "label": 41680, "shape": "dot"}, {"id": 40140, "label": 40140, "shape": "dot"}, {"id": 41190, "label": 41190, "shape": "dot"}, {"id": 40100, "label": 40100, "shape": "dot"}, {"id": 41300, "label": 41300, "shape": "dot"}, {"id": 40760, "label": 40760, "shape": "dot"}, {"id": 40880, "label": 40880, "shape": "dot"}, {"id": 41380, "label": 41380, "shape": "dot"}, {"id": 40340, "label": 40340, "shape": "dot"}, {"id": 41200, "label": 41200, "shape": "dot"}, {"id": 40770, "label": 40770, "shape": "dot"}, {"id": 40540, "label": 40540, "shape": "dot"}, {"id": 40080, "label": 40080, "shape": "dot"}, {"id": 41420, "label": 41420, "shape": "dot"}, {"id": 41320, "label": 41320, "shape": "dot"}, {"id": 41220, "label": 41220, "shape": "dot"}, {"id": 40650, "label": 40650, "shape": "dot"}, {"id": 40630, "label": 40630, "shape": "dot"}, {"id": 41450, "label": 41450, "shape": "dot"}, {"id": 40330, "label": 40330, "shape": "dot"}, {"id": 41660, "label": 41660, "shape": "dot"}, {"id": 41090, "label": 41090, "shape": "dot"}, {"id": 40560, "label": 40560, "shape": "dot"}, {"id": 41490, "label": 41490, "shape": "dot"}, {"id": 41000, "label": 41000, "shape": "dot"}, {"id": 40190, "label": 40190, "shape": "dot"}, {"id": 41230, "label": 41230, "shape": "dot"}, {"id": 41170, "label": 41170, "shape": "dot"}, {"id": 40910, "label": 40910, "shape": "dot"}, {"id": 40990, "label": 40990, "shape": "dot"}, {"id": 40240, "label": 40240, "shape": "dot"}, {"id": 41430, "label": 41430, "shape": "dot"}, {"id": 40450, "label": 40450, "shape": "dot"}, {"id": 40390, "label": 40390, "shape": "dot"}, {"id": 40980, "label": 40980, "shape": "dot"}, {"id": 40180, "label": 40180, "shape": "dot"}, {"id": 40010, "label": 40010, "shape": "dot"}, {"id": 40970, "label": 40970, "shape": "dot"}, {"id": 40920, "label": 40920, "shape": "dot"}, {"id": 40250, "label": 40250, "shape": "dot"}, {"id": 40220, "label": 40220, "shape": "dot"}, {"id": 40810, "label": 40810, "shape": "dot"}, {"id": 40470, "label": 40470, "shape": "dot"}, {"id": 40350, "label": 40350, "shape": "dot"}, {"id": 40430, "label": 40430, "shape": "dot"}, {"id": 41340, "label": 41340, "shape": "dot"}, {"id": 40070, "label": 40070, "shape": "dot"}, {"id": 40790, "label": 40790, "shape": "dot"}, {"id": 40370, "label": 40370, "shape": "dot"}, {"id": 40490, "label": 40490, "shape": "dot"}, {"id": 41410, "label": 41410, "shape": "dot"}, {"id": 40320, "label": 40320, "shape": "dot"}, {"id": 40590, "label": 40590, "shape": "dot"}, {"id": 40670, "label": 40670, "shape": "dot"}, {"id": 40570, "label": 40570, "shape": "dot"}, {"id": 41020, "label": 41020, "shape": "dot"}, {"id": 40060, "label": 40060, "shape": "dot"}, {"id": 41240, "label": 41240, "shape": "dot"}, {"id": 40550, "label": 40550, "shape": "dot"}, {"id": 41330, "label": 41330, "shape": "dot"}, {"id": 41280, "label": 41280, "shape": "dot"}, {"id": 40750, "label": 40750, "shape": "dot"}, {"id": 40230, "label": 40230, "shape": "dot"}, {"id": 40820, "label": 40820, "shape": "dot"}, {"id": 40580, "label": 40580, "shape": "dot"}, {"id": 40420, "label": 40420, "shape": "dot"}, {"id": 40600, "label": 40600, "shape": "dot"}, {"id": 40150, "label": 40150, "shape": "dot"}, {"id": 40780, "label": 40780, "shape": "dot"}, {"id": 41040, "label": 41040, "shape": "dot"}, {"id": 40440, "label": 40440, "shape": "dot"}, {"id": 40740, "label": 40740, "shape": "dot"}, {"id": 40210, "label": 40210, "shape": "dot"}, {"id": 40830, "label": 40830, "shape": "dot"}, {"id": 41030, "label": 41030, "shape": "dot"}, {"id": 40850, "label": 40850, "shape": "dot"}, {"id": 40160, "label": 40160, "shape": "dot"}, {"id": 40040, "label": 40040, "shape": "dot"}, {"id": 40730, "label": 40730, "shape": "dot"}, {"id": 41290, "label": 41290, "shape": "dot"}, {"id": 41180, "label": 41180, "shape": "dot"}, {"id": 40870, "label": 40870, "shape": "dot"}, {"id": 41010, "label": 41010, "shape": "dot"}, {"id": 41480, "label": 41480, "shape": "dot"}, {"id": 40090, "label": 40090, "shape": "dot"}, {"id": 41500, "label": 41500, "shape": "dot"}, {"id": 41460, "label": 41460, "shape": "dot"}, {"id": 41440, "label": 41440, "shape": "dot"}, {"id": 41310, "label": 41310, "shape": "dot"}, {"id": 40360, "label": 40360, "shape": "dot"}, {"id": 41210, "label": 41210, "shape": "dot"}, {"id": 40530, "label": 40530, "shape": "dot"}, {"id": 40660, "label": 40660, "shape": "dot"}, {"id": 40800, "label": 40800, "shape": "dot"}, {"id": 40710, "label": 40710, "shape": "dot"}, {"id": 40460, "label": 40460, "shape": "dot"}, {"id": 40930, "label": 40930, "shape": "dot"}, {"id": 40960, "label": 40960, "shape": "dot"}, {"id": 41150, "label": 41150, "shape": "dot"}, {"id": 40310, "label": 40310, "shape": "dot"}, {"id": 40120, "label": 40120, "shape": "dot"}, {"id": 41060, "label": 41060, "shape": "dot"}, {"id": 41130, "label": 41130, "shape": "dot"}]);
+        edges = new vis.DataSet([]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+
+        
+
+
+        
+        network.on("stabilizationProgress", function(params) {
+      		document.getElementById('loadingBar').removeAttribute("style");
+	        var maxWidth = 496;
+	        var minWidth = 20;
+	        var widthFactor = params.iterations/params.total;
+	        var width = Math.max(minWidth,maxWidth * widthFactor);
+
+	        document.getElementById('bar').style.width = width + 'px';
+	        document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+	    });
+	    network.once("stabilizationIterationsDone", function() {
+	        document.getElementById('text').innerHTML = '100%';
+	        document.getElementById('bar').style.width = '496px';
+	        document.getElementById('loadingBar').style.opacity = 0;
+	        // really clean the dom element
+	        setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+	    });
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
