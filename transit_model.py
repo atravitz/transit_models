@@ -11,7 +11,7 @@ class Passenger:
         self.transit_time = 0
 
 
-def initialize(n_passengers, node_capacity, itinerary=None):
+def initialize(n_passengers, node_capacity, itinerary=None, intermediate_stops=0):
     g = nx.read_gml('cta.gml')
 
     # number of passengers at a stop
@@ -23,12 +23,16 @@ def initialize(n_passengers, node_capacity, itinerary=None):
     for i in range(n_passengers):
         # assign a random direct-path itinerary
         p = Passenger()
-        p.home = random.choice(list(g.nodes))
-        p.work = random.choice(list(g.nodes))
 
         if itinerary is None:
-            p.itinerary = [p.home, p.work, p.home]
-        else: p.itinerary = itinerary
+            p.home = random.choice(list(g.nodes))
+            random_itinerary = [p.home]
+            for i in range(intermediate_stops+1): # add 1 to represent work
+                random_itinerary.append(random.choice(list(g.nodes)))
+            random_itinerary.append(p.home)
+            p.itinerary = random_itinerary
+        else:
+            p.itinerary = itinerary
 
         p.itinerary_index = 0
         p.current = p.itinerary[p.itinerary_index]
@@ -100,7 +104,7 @@ def add_line(path, g, name):
 
     new_line = np.loadtxt(path, dtype=int)
     for n in new_line:
-        node_colors = g.nodes[str(n)]['allnodecolors'] 
+        node_colors = g.nodes[str(n)]['allnodecolors']
         if name not in node_colors:
             if type(node_colors) == list:
                 g.nodes[str(n)]['allnodecolors'] = g.nodes[str(n)]['allnodecolors'] + [name]
@@ -109,8 +113,7 @@ def add_line(path, g, name):
 
 
 if __name__ == '__main__':
-    initialize()
-    for n in range(n_simulations):
-        update(run_steps=timesteps)
+    g, passengers = initialize(n_passengers=100, node_capacity=10)
+    update(g, passengers, max_run_steps=10)
 
 
