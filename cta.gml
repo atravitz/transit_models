@@ -5,6 +5,7 @@ graph [
       pos -87.80317600000001
       pos 41.886848
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 1
@@ -12,6 +13,7 @@ graph [
       pos -87.79378299999999
       pos 41.886988
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 2
@@ -19,6 +21,7 @@ graph [
       pos -87.783661
       pos 41.887159000000004
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 3
@@ -26,6 +29,7 @@ graph [
       pos -87.774135
       pos 41.887293
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 4
@@ -33,6 +37,7 @@ graph [
       pos -87.76565
       pos 41.887389
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 5
@@ -40,6 +45,7 @@ graph [
       pos -87.754986
       pos 41.887163
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 6
@@ -47,6 +53,7 @@ graph [
       pos -87.744698
       pos 41.886519
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 7
@@ -54,6 +61,7 @@ graph [
       pos -87.725404
       pos 41.885412
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 8
@@ -61,6 +69,7 @@ graph [
       pos -87.716523
       pos 41.884904
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 9
@@ -68,6 +77,7 @@ graph [
       pos -87.70615500000001
       pos 41.884321
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 10
@@ -75,6 +85,7 @@ graph [
       pos -87.69623399999999
       pos 41.88422
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 11
@@ -82,6 +93,8 @@ graph [
       pos -87.666969
       pos 41.885269
     nodecolor "green"
+      allnodecolors "green"
+      allnodecolors "pink"
   ]
   node [
     id 12
@@ -89,6 +102,8 @@ graph [
       pos -87.65212993
       pos 41.88557676
     nodecolor "green"
+      allnodecolors "green"
+      allnodecolors "pink"
   ]
   node [
     id 13
@@ -96,6 +111,8 @@ graph [
       pos -87.64178199999999
       pos 41.885678000000006
     nodecolor "green"
+      allnodecolors "green"
+      allnodecolors "pink"
   ]
   node [
     id 14
@@ -103,6 +120,7 @@ graph [
       pos -87.630886
       pos 41.885737
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 15
@@ -110,6 +128,8 @@ graph [
       pos -87.627835
       pos 41.885740000000006
     nodecolor "green"
+      allnodecolors "green"
+      allnodecolors "brown"
   ]
   node [
     id 16
@@ -117,6 +137,10 @@ graph [
       pos -87.626189
       pos 41.88322
     nodecolor "green"
+      allnodecolors "green"
+      allnodecolors "purple"
+      allnodecolors "pink"
+      allnodecolors "orange"
   ]
   node [
     id 17
@@ -124,6 +148,8 @@ graph [
       pos -87.626037
       pos 41.879507000000004
     nodecolor "green"
+      allnodecolors "green"
+      allnodecolors "brown"
   ]
   node [
     id 18
@@ -131,6 +157,7 @@ graph [
       pos -87.6270314058
       pos 41.8673785311
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 19
@@ -138,6 +165,7 @@ graph [
       pos -87.626402
       pos 41.853115
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 20
@@ -145,6 +173,7 @@ graph [
       pos -87.625826
       pos 41.831677
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 21
@@ -152,6 +181,7 @@ graph [
       pos -87.621371
       pos 41.821732
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 22
@@ -159,6 +189,7 @@ graph [
       pos -87.61902099999999
       pos 41.816462
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 23
@@ -166,6 +197,7 @@ graph [
       pos -87.618826
       pos 41.809209
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 24
@@ -173,6 +205,7 @@ graph [
       pos -87.618487
       pos 41.80209
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 25
@@ -180,6 +213,7 @@ graph [
       pos -87.61832700000001
       pos 41.795171999999994
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 26
@@ -187,6 +221,7 @@ graph [
       pos -87.615546
       pos 41.78013
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 27
@@ -194,6 +229,7 @@ graph [
       pos -87.605857
       pos 41.780309
     nodecolor "green"
+      allnodecolors "green"
   ]
   node [
     id 28
@@ -201,6 +237,8 @@ graph [
       pos -87.69073
       pos 42.073153000000005
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
   ]
   node [
     id 29
@@ -208,6 +246,8 @@ graph [
       pos -87.68561700000001
       pos 42.063987
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
   ]
   node [
     id 30
@@ -215,6 +255,8 @@ graph [
       pos -87.683337
       pos 42.058282
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
   ]
   node [
     id 31
@@ -222,6 +264,8 @@ graph [
       pos -87.68356
       pos 42.054159999999996
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
   ]
   node [
     id 32
@@ -229,6 +273,8 @@ graph [
       pos -87.683543
       pos 42.047709999999995
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
   ]
   node [
     id 33
@@ -236,6 +282,8 @@ graph [
       pos -87.681602
       pos 42.041655
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
   ]
   node [
     id 34
@@ -243,6 +291,8 @@ graph [
       pos -87.679538
       pos 42.033456
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
   ]
   node [
     id 35
@@ -250,6 +300,8 @@ graph [
       pos -87.678329
       pos 42.027612
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
   ]
   node [
     id 36
@@ -257,6 +309,9 @@ graph [
       pos -87.672892
       pos 42.019063
     nodecolor "purple"
+      allnodecolors "purple"
+      allnodecolors "purple"
+      allnodecolors "yellow"
   ]
   node [
     id 37
@@ -264,6 +319,7 @@ graph [
       pos -87.74722084
       pos 42.02624348
     nodecolor "yellow"
+      allnodecolors "yellow"
   ]
   node [
     id 38
@@ -271,6 +327,7 @@ graph [
       pos -87.751919
       pos 42.038951000000004
     nodecolor "yellow"
+      allnodecolors "yellow"
   ]
   node [
     id 39
@@ -278,6 +335,7 @@ graph [
       pos -87.6692571266
       pos 42.0160204165
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 40
@@ -285,6 +343,7 @@ graph [
       pos -87.665909
       pos 42.008362
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 41
@@ -292,6 +351,7 @@ graph [
       pos -87.661061
       pos 42.001073
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 42
@@ -299,6 +359,7 @@ graph [
       pos -87.65918662690001
       pos 41.9944830093
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 43
@@ -306,6 +367,7 @@ graph [
       pos -87.6590684978
       pos 41.9900990857
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 44
@@ -313,6 +375,7 @@ graph [
       pos -87.65884
       pos 41.983503999999996
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 45
@@ -320,6 +383,7 @@ graph [
       pos -87.658668
       pos 41.977984
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 46
@@ -327,6 +391,7 @@ graph [
       pos -87.6585279483
       pos 41.9733220506
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 47
@@ -334,6 +399,7 @@ graph [
       pos -87.6584869372
       pos 41.968976288200004
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 48
@@ -341,6 +407,7 @@ graph [
       pos -87.6579258145
       pos 41.965481568
     nodecolor "purple"
+      allnodecolors "purple"
   ]
   node [
     id 49
@@ -348,6 +415,7 @@ graph [
       pos -87.65466141270001
       pos 41.9539048386
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 50
@@ -355,6 +423,7 @@ graph [
       pos -87.6536241013
       pos 41.947316173000004
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 51
@@ -362,6 +431,8 @@ graph [
       pos -87.65338
       pos 41.939751
     nodecolor "brown"
+      allnodecolors "brown"
+      allnodecolors "purple"
   ]
   node [
     id 52
@@ -369,6 +440,8 @@ graph [
       pos -87.6528684398
       pos 41.9253003719
     nodecolor "brown"
+      allnodecolors "brown"
+      allnodecolors "purple"
   ]
   node [
     id 53
@@ -376,6 +449,7 @@ graph [
       pos -87.64917700000001
       pos 41.910655
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 54
@@ -383,6 +457,7 @@ graph [
       pos -87.631412
       pos 41.90392
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 55
@@ -390,6 +465,7 @@ graph [
       pos -87.628176
       pos 41.896671000000005
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 56
@@ -397,6 +473,7 @@ graph [
       pos -87.62802099999999
       pos 41.891665
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 57
@@ -404,6 +481,7 @@ graph [
       pos -87.627813
       pos 41.884809000000004
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 58
@@ -411,6 +489,7 @@ graph [
       pos -87.627696
       pos 41.880745000000005
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 59
@@ -418,6 +497,7 @@ graph [
       pos -87.627596
       pos 41.878153000000005
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 60
@@ -425,6 +505,7 @@ graph [
       pos -87.62747900000001
       pos 41.874039
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 61
@@ -432,6 +513,7 @@ graph [
       pos -87.63096800000001
       pos 41.853206
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 62
@@ -439,6 +521,7 @@ graph [
       pos -87.630636
       pos 41.831191
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 63
@@ -446,6 +529,7 @@ graph [
       pos -87.63094
       pos 41.810318
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 64
@@ -453,6 +537,7 @@ graph [
       pos -87.631157
       pos 41.79542
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 65
@@ -460,6 +545,7 @@ graph [
       pos -87.63095200000001
       pos 41.780536
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 66
@@ -467,6 +553,7 @@ graph [
       pos -87.625724
       pos 41.768367
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 67
@@ -474,6 +561,7 @@ graph [
       pos -87.625112
       pos 41.750419
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 68
@@ -481,6 +569,7 @@ graph [
       pos -87.624717
       pos 41.735372
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 69
@@ -488,6 +577,7 @@ graph [
       pos -87.624342
       pos 41.722377
     nodecolor "red"
+      allnodecolors "red"
   ]
   node [
     id 70
@@ -495,6 +585,7 @@ graph [
       pos -87.817318
       pos 41.874257
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 71
@@ -502,6 +593,7 @@ graph [
       pos -87.806961
       pos 41.873490000000004
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 72
@@ -509,6 +601,7 @@ graph [
       pos -87.791602
       pos 41.872108000000004
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 73
@@ -516,6 +609,7 @@ graph [
       pos -87.77681199999999
       pos 41.870851
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 74
@@ -523,6 +617,7 @@ graph [
       pos -87.745154
       pos 41.871574
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 75
@@ -530,6 +625,7 @@ graph [
       pos -87.725663
       pos 41.873796999999996
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 76
@@ -537,6 +633,7 @@ graph [
       pos -87.70604
       pos 41.874340999999994
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 77
@@ -544,6 +641,7 @@ graph [
       pos -87.688436
       pos 41.875478
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 78
@@ -551,6 +649,7 @@ graph [
       pos -87.673932
       pos 41.875706
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 79
@@ -558,6 +657,7 @@ graph [
       pos -87.659458
       pos 41.87592
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 80
@@ -565,6 +665,7 @@ graph [
       pos -87.64970699999999
       pos 41.875474
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 81
@@ -572,6 +673,7 @@ graph [
       pos -87.640984
       pos 41.875539
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 82
@@ -579,6 +681,7 @@ graph [
       pos -87.631722
       pos 41.875568
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 83
@@ -586,6 +689,7 @@ graph [
       pos -87.629296
       pos 41.878183
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 84
@@ -593,6 +697,7 @@ graph [
       pos -87.629378
       pos 41.880703000000004
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 85
@@ -600,6 +705,7 @@ graph [
       pos -87.62944
       pos 41.883164
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 86
@@ -607,6 +713,7 @@ graph [
       pos -87.647578
       pos 41.891189000000004
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 87
@@ -614,6 +721,7 @@ graph [
       pos -87.655214
       pos 41.896075
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 88
@@ -621,6 +729,7 @@ graph [
       pos -87.666496
       pos 41.903355
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 89
@@ -628,6 +737,7 @@ graph [
       pos -87.6775400139
       pos 41.9098452343
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 90
@@ -635,6 +745,7 @@ graph [
       pos -87.687364
       pos 41.916157
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 91
@@ -642,6 +753,7 @@ graph [
       pos -87.69724395370001
       pos 41.922158309699995
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 92
@@ -649,6 +761,7 @@ graph [
       pos -87.7076881549
       pos 41.9295342259
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 93
@@ -656,6 +769,7 @@ graph [
       pos -87.71225212
       pos 41.939110704099996
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 94
@@ -663,6 +777,7 @@ graph [
       pos -87.7184584172
       pos 41.9466037164
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 95
@@ -670,6 +785,7 @@ graph [
       pos -87.729229
       pos 41.952925
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 96
@@ -677,6 +793,7 @@ graph [
       pos -87.74290343620001
       pos 41.9609010454
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 97
@@ -684,6 +801,7 @@ graph [
       pos -87.7615940115
       pos 41.9702338623
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 98
@@ -691,6 +809,7 @@ graph [
       pos -87.8089
       pos 41.98227
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 99
@@ -698,6 +817,7 @@ graph [
       pos -87.83802800000001
       pos 41.984246
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 100
@@ -705,6 +825,7 @@ graph [
       pos -87.859388
       pos 41.983507
     nodecolor "blue"
+      allnodecolors "blue"
   ]
   node [
     id 101
@@ -712,6 +833,7 @@ graph [
       pos -87.75669201
       pos 41.85177331
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 102
@@ -719,6 +841,7 @@ graph [
       pos -87.745336
       pos 41.851820000000004
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 103
@@ -726,6 +849,7 @@ graph [
       pos -87.73325799999999
       pos 41.853751
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 104
@@ -733,6 +857,7 @@ graph [
       pos -87.724311
       pos 41.853732
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 105
@@ -740,6 +865,7 @@ graph [
       pos -87.714842
       pos 41.853839
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 106
@@ -747,6 +873,7 @@ graph [
       pos -87.70540799999999
       pos 41.853964000000005
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 107
@@ -754,6 +881,7 @@ graph [
       pos -87.694774
       pos 41.854109
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 108
@@ -761,6 +889,7 @@ graph [
       pos -87.685129
       pos 41.854225
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 109
@@ -768,6 +897,7 @@ graph [
       pos -87.675975
       pos 41.854517
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 110
@@ -775,6 +905,7 @@ graph [
       pos -87.669147
       pos 41.857908
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 111
@@ -782,6 +913,7 @@ graph [
       pos -87.66953000000001
       pos 41.871551000000004
     nodecolor "pink"
+      allnodecolors "pink"
   ]
   node [
     id 112
@@ -789,6 +921,7 @@ graph [
       pos -87.628196
       pos 41.876862
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 113
@@ -796,6 +929,7 @@ graph [
       pos -87.631739
       pos 41.8768
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 114
@@ -803,6 +937,7 @@ graph [
       pos -87.63374
       pos 41.878723
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 115
@@ -810,6 +945,7 @@ graph [
       pos -87.63378
       pos 41.882695
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 116
@@ -817,6 +953,7 @@ graph [
       pos -87.713065
       pos 41.967901
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 117
@@ -824,6 +961,7 @@ graph [
       pos -87.708821
       pos 41.965996000000004
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 118
@@ -831,6 +969,7 @@ graph [
       pos -87.70164399999999
       pos 41.966046
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 119
@@ -838,6 +977,7 @@ graph [
       pos -87.6941
       pos 41.966115
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 120
@@ -845,6 +985,7 @@ graph [
       pos -87.688502
       pos 41.966163
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 121
@@ -852,6 +993,7 @@ graph [
       pos -87.678639
       pos 41.966286
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 122
@@ -859,6 +1001,7 @@ graph [
       pos -87.67504699999999
       pos 41.961756
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 123
@@ -866,6 +1009,7 @@ graph [
       pos -87.674868
       pos 41.954521
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 124
@@ -873,6 +1017,7 @@ graph [
       pos -87.674642
       pos 41.947028
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 125
@@ -880,6 +1025,7 @@ graph [
       pos -87.670907
       pos 41.943622999999995
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 126
@@ -887,6 +1033,7 @@ graph [
       pos -87.663619
       pos 41.943744
     nodecolor "brown"
+      allnodecolors "brown"
   ]
   node [
     id 127
@@ -894,6 +1041,8 @@ graph [
       pos -87.653266
       pos 41.936033
     nodecolor "brown"
+      allnodecolors "brown"
+      allnodecolors "purple"
   ]
   node [
     id 128
@@ -901,6 +1050,8 @@ graph [
       pos -87.653131
       pos 41.932732
     nodecolor "brown"
+      allnodecolors "brown"
+      allnodecolors "purple"
   ]
   node [
     id 129
@@ -908,6 +1059,8 @@ graph [
       pos -87.652644
       pos 41.918217
     nodecolor "brown"
+      allnodecolors "brown"
+      allnodecolors "purple"
   ]
   node [
     id 130
@@ -915,6 +1068,8 @@ graph [
       pos -87.639302
       pos 41.910409
     nodecolor "brown"
+      allnodecolors "brown"
+      allnodecolors "purple"
   ]
   node [
     id 131
@@ -922,6 +1077,8 @@ graph [
       pos -87.635924
       pos 41.896809999999995
     nodecolor "brown"
+      allnodecolors "brown"
+      allnodecolors "purple"
   ]
   node [
     id 132
@@ -929,6 +1086,8 @@ graph [
       pos -87.633924
       pos 41.888969
     nodecolor "brown"
+      allnodecolors "brown"
+      allnodecolors "purple"
   ]
   node [
     id 133
@@ -936,6 +1095,7 @@ graph [
       pos -87.737875
       pos 41.786609999999996
     nodecolor "orange"
+      allnodecolors "orange"
   ]
   node [
     id 134
@@ -943,6 +1103,7 @@ graph [
       pos -87.72449300000001
       pos 41.799756
     nodecolor "orange"
+      allnodecolors "orange"
   ]
   node [
     id 135
@@ -950,6 +1111,7 @@ graph [
       pos -87.704406
       pos 41.804235999999996
     nodecolor "orange"
+      allnodecolors "orange"
   ]
   node [
     id 136
@@ -957,6 +1119,7 @@ graph [
       pos -87.68401899999999
       pos 41.804546
     nodecolor "orange"
+      allnodecolors "orange"
   ]
   node [
     id 137
@@ -964,6 +1127,7 @@ graph [
       pos -87.680622
       pos 41.829353000000005
     nodecolor "orange"
+      allnodecolors "orange"
   ]
   node [
     id 138
@@ -971,6 +1135,7 @@ graph [
       pos -87.665317
       pos 41.839234000000005
     nodecolor "orange"
+      allnodecolors "orange"
   ]
   node [
     id 139
@@ -978,6 +1143,7 @@ graph [
       pos -87.648088
       pos 41.846779999999995
     nodecolor "orange"
+      allnodecolors "orange"
   ]
   edge [
     source 0

@@ -36,10 +36,10 @@ STOP_TIMES_subway[STOP_TIMES_subway['pickup_type'] == 0]
 STOPS_stations = STOPS[STOPS['location_type']==1]
 
 def get_parent(stop_id):
-    """returns the parent station for a given stop."""
+    """returns the parent station for a given stop"""
     parent = STOPS[STOPS['stop_id']==stop_id]['parent_station'].values
     if len(parent) == 0:
-        return stop_id
+        return int(stop_id)
     else:
         return int(parent[0])
 
@@ -50,10 +50,10 @@ edges_list = []
 for trip_id, group in STOP_TIMES_subway.groupby('trip_id'):
         for i in group.index[:-1]:
             origin_stop = STOP_TIMES_subway['station_id'][i]
+
             dest_stop = STOP_TIMES_subway['station_id'][i+1]
-            ## only record edges that are 1 unit away
             if (STOP_TIMES_subway['stop_sequence'][i+1] - STOP_TIMES_subway['stop_sequence'][i]) == 1:
-                edges_list.append((origin_stop, dest_stop))
+                edges_list.append((int(origin_stop), int(dest_stop)))
 
 ## read in stops info
 ## TODO: get this info from GTFS data only
@@ -93,6 +93,7 @@ for n in G.nodes:
     stop_row = STOPS[STOPS['stop_id']==n]
     G.nodes[n]['pos'] = (stop_row['stop_lon'].values[0],
                          stop_row['stop_lat'].values[0])
-    G.nodes[n]['node_color'] = colors_dict[n][0]
+    G.nodes[n]['nodecolor'] = colors_dict[n][0]
+    G.nodes[n]['allnodecolors'] = colors_dict[n]
 
 nx.write_gml(G, 'cta.gml')

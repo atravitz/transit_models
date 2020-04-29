@@ -33,6 +33,7 @@ def initialize(n_passengers, node_capacity, itinerary=None):
         p.itinerary_index = 0
         p.current = p.itinerary[p.itinerary_index]
         p.destination = p.itinerary[p.itinerary_index + 1]
+        p.current_node_color = g.nodes[p.current]['nodecolor']
         p.completed = False
 
         passengers.append(p)
@@ -42,7 +43,7 @@ def initialize(n_passengers, node_capacity, itinerary=None):
     return(g, passengers)
 
 
-def update(g, passengers, max_run_steps, graph_period=None):
+def update(g, passengers, max_run_steps, graph_period=None, time_penalty_capacity=3, time_penalty_transfer=3):
     transit_times = []
     timestep = 0
     graphs = []
@@ -66,16 +67,16 @@ def update(g, passengers, max_run_steps, graph_period=None):
                 if p.current != p.destination:
                     path = nx.shortest_path(g, p.current, p.destination)
                     next_node = path[1]
-                    ## actual jams
-                    # if g.nodes[next_node]['population'] < g.nodes[next_node]['capacity']:
-                    #     # population balance
-                    #     g.nodes[p.current]['population'] -= 1
-                    #     p.current = next_node
-                    #     g.nodes[p.current]['population'] += 1
 
+                    # time penalize if transferring between lines
+                    if p.current_node_color not in g.nodes[next_node]['allnodecolors']:
+                        p.transit_time += time_penalty_transfer
+
+                    # time penalize if station is over capacity
                     if g.nodes[next_node]['population'] >= g.nodes[next_node]['capacity']:
-                        p.transit_time += 3
+                        p.transit_time += time_penalty_capacity
 
+                    # population balance
                     g.nodes[p.current]['population'] -= 1
                     p.current = next_node
                     g.nodes[p.current]['population'] += 1
@@ -89,8 +90,6 @@ def update(g, passengers, max_run_steps, graph_period=None):
         return(transit_times, graphs)
     else:
         return(transit_times)
-
-
 
 
 if __name__ == '__main__':
