@@ -66,14 +66,20 @@ def update(g, passengers, max_run_steps, graph_period=None):
                 if p.current != p.destination:
                     path = nx.shortest_path(g, p.current, p.destination)
                     next_node = path[1]
+                    ## actual jams
+                    # if g.nodes[next_node]['population'] < g.nodes[next_node]['capacity']:
+                    #     # population balance
+                    #     g.nodes[p.current]['population'] -= 1
+                    #     p.current = next_node
+                    #     g.nodes[p.current]['population'] += 1
 
-                    if g.nodes[next_node]['population'] < g.nodes[next_node]['capacity']:
-                        # population balance
-                        g.nodes[p.current]['population'] -= 1
-                        p.current = next_node
-                        g.nodes[p.current]['population'] += 1
+                    if g.nodes[next_node]['population'] >= g.nodes[next_node]['capacity']:
+                        p.transit_time += 3
 
-                p.transit_time = p.transit_time + 1
+                    g.nodes[p.current]['population'] -= 1
+                    p.current = next_node
+                    g.nodes[p.current]['population'] += 1
+                p.transit_time += 1
 
         if graph_period and timestep%graph_period == 0:
             graphs.append(g.copy())

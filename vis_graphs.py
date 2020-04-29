@@ -23,7 +23,6 @@ def animation(graphs, save=False):
                 node_color=colors,
                 cmap='Greys')
         plt.axis('equal')
-
     fig, ax = plt.subplots(dpi=150)
     ani = FuncAnimation(fig, update_graph, frames=len(graphs), repeat_delay=100)
     if save:
@@ -39,7 +38,7 @@ if __name__ == '__main__':
     for n in g:
         node_coords[n] = g.nodes[n]['pos']
 
-    g, passengers = tm.initialize(n_passengers=10, node_capacity=1000)
-    transit_times, graphs = tm.update(g, passengers, max_run_steps=1000, graph_period=1)
+    g, passengers = tm.initialize(n_passengers=500, node_capacity=20)
+    transit_times, graphs = tm.update(g, passengers, max_run_steps=100, graph_period=1)
 
     animation(graphs)
