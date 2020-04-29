@@ -111,9 +111,11 @@ def add_line(path, g, name):
             elif type(node_colors) == str:
                 g.nodes[str(n)]['allnodecolors'] = [g.nodes[str(n)]['allnodecolors'], name]
 
+    return(g)
+
 
 if __name__ == '__main__':
-    g, passengers = initialize(n_passengers=100, node_capacity=10)
+    g, passengers = initialize(n_passengers=100, node_capacity=10, intermediate_stops=2)
     update(g, passengers, max_run_steps=10)
 
 
