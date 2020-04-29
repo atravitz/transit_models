@@ -43,7 +43,9 @@ def initialize(n_passengers, node_capacity, itinerary=None):
     return(g, passengers)
 
 
-def update(g, passengers, max_run_steps, graph_period=None, time_penalty_capacity=3, time_penalty_transfer=3):
+def update(g, passengers,
+           max_run_steps, graph_period=None,
+           time_penalty_capacity=3, time_penalty_transfer=3):
     transit_times = []
     timestep = 0
     graphs = []
