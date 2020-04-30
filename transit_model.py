@@ -37,7 +37,6 @@ def initialize(n_passengers, node_capacity, itinerary=None, intermediate_stops=0
         p.itinerary_index = 0
         p.current = p.itinerary[p.itinerary_index]
         p.destination = p.itinerary[p.itinerary_index + 1]
-        p.current_node_color = g.nodes[p.current]['nodecolor']
         p.completed = False
 
         passengers.append(p)
@@ -75,7 +74,7 @@ def update(g, passengers,
                     next_node = path[1]
 
                     # time penalize if transferring between lines
-                    if p.current_node_color not in g.nodes[next_node]['allnodecolors']:
+                    if  g.nodes[p.current]['nodecolor'] not in g.nodes[next_node]['allnodecolors']:
                         p.transit_time += time_penalty_transfer
 
                     # time penalize if station is over capacity
