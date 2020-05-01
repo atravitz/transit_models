@@ -1,3 +1,6 @@
 numpy v1.17.3
 pandas v0.25.3
 matplotlib v3.1.2
+
+optional:
+bokeh v2.0.2
