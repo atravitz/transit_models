@@ -100,16 +100,20 @@ def update(g, passengers,
 def add_line(path, g, name):
     """add a new line to a networkx graph
        note: all nodes must already exist"""
-
     new_line = np.loadtxt(path, dtype=int)
+
+    for i in range(len(new_line)-1):
+        node_src = str(new_line[i])
+        node_dst = str(new_line[i+1])
+        g.add_edge(node_src, node_dst)
+
     for n in new_line:
         node_colors = g.nodes[str(n)]['allnodecolors']
-        if name not in node_colors:
+        if 'lightblue' not in node_colors:
             if type(node_colors) == list:
-                g.nodes[str(n)]['allnodecolors'] = g.nodes[str(n)]['allnodecolors'] + [name]
+                g.nodes[str(n)]['allnodecolors'] = g.nodes[str(n)]['allnodecolors'] + ['lightblue']
             elif type(node_colors) == str:
-                g.nodes[str(n)]['allnodecolors'] = [g.nodes[str(n)]['allnodecolors'], name]
-
+                g.nodes[str(n)]['allnodecolors'] = [g.nodes[str(n)]['allnodecolors'], 'lightblue']
     return(g)
 
 
